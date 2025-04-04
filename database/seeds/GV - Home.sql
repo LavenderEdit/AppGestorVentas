@@ -1,9 +1,9 @@
 CREATE SCHEMA IF NOT EXISTS G3_GESTOR_VENTAS;
 USE G3_GESTOR_VENTAS;
 
--- Faltan rellenar pero seran rellenados en la aplicación
-SELECT * FROM USUARIOS;
-SELECT * FROM AVATARUSUARIO;
+DROP SCHEMA G3_GESTOR_VENTAS;
+
+-- Ya han sido rellenados
 SELECT * FROM VENTAS;
 SELECT * FROM DETALLE_VENTAS;
 SELECT * FROM PAGOS;
@@ -17,3 +17,9 @@ SELECT * FROM PROVEEDORES;
 SELECT * FROM TIPOCLIENTE;
 SELECT * FROM TIPOUSUARIO;
 
+-- Agregado despues de insertar el avatar
+SELECT * FROM USUARIOS;
+
+-- Insertado desde la app
+-- AppDbConnect [https://github.com/LavenderEdit/AppDbConnect.git]
+SELECT * FROM AVATARUSUARIO;

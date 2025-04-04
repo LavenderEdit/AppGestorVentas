@@ -11,7 +11,7 @@ CREATE TABLE TIPOUSUARIO (
 -- Tabla de avatares de usuario
 CREATE TABLE AVATARUSUARIO (
 	id_avatar_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    avatar_usuario BLOB,
+    avatar_usuario LONGBLOB,
     nombre_avatar VARCHAR(100),
     tipo_avatar VARCHAR(10),
     peso_avatar VARCHAR(50),

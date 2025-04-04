@@ -9,6 +9,19 @@ INSERT INTO TIPOUSUARIO (nombre_tipo, descripcion) VALUES
   ('Cajero', 'Usuario que maneja la caja'),
   ('Soporte', 'Usuario de soporte técnico');
 
+-- 3. USUARIOS
+INSERT INTO USUARIOS (nombre, correo, contrasenia, tipo_id_usuario, avatar_id_usuario) VALUES
+  ('admin-1', 'admin1@example.com', 'password1', 1, 1),
+  ('vendedor-1', 'vendedor1@example.com', 'password1', 2, 1),
+  ('vendedor-2', 'vendedor2@example.com', 'password1', 2, 1),
+  ('supervisor-1', 'supervisor1@example.com', 'password1', 3, 1),
+  ('cajero-1', 'cajero1@example.com', 'password1', 4, 1),
+  ('vendedor-3', 'vendedor3@example.com', 'password1', 2, 1),
+  ('vendedor-4', 'vendedor4@example.com', 'password1', 2, 1),
+  ('soporte-1', 'soporte1@example.com', 'password1', 5, 1),
+  ('vendedor-5', 'vendedor5@example.com', 'password1', 2, 1),
+  ('admin-2', 'admin2@example.com', 'password1', 1, 1);
+
 -- 4. TIPOCLIENTE
 INSERT INTO TIPOCLIENTE (nombre_tipo, descripcion) VALUES
   ('PÚBLICO EN GENERAL', 'Cliente sin identificación formal'),
@@ -80,6 +93,46 @@ INSERT INTO PRODUCTOS (nombre, descripcion, precio, stock, id_categoria, id_prov
   ('Producto 19', 'Descripción del producto 19', 9.99, 220, 9, 10),
   ('Producto 20', 'Descripción del producto 20', 13.50, 180, 10, 1);
 
+-- 9. VENTAS
+INSERT INTO VENTAS (fecha, total, id_cliente, id_usuario) VALUES
+  ('2025-04-01 10:00:00', 50.00, 1, 2),
+  ('2025-04-02 11:30:00', 75.50, 2, 3),
+  ('2025-04-03 09:15:00', 100.00, 3, 4),
+  ('2025-04-04 14:45:00', 150.25, 4, 5),
+  ('2025-04-05 16:20:00', 80.00, 5, 6),
+  ('2025-04-06 12:10:00', 95.00, 6, 7),
+  ('2025-04-07 13:00:00', 60.75, 7, 8),
+  ('2025-04-08 15:30:00', 110.00, 8, 9),
+  ('2025-04-09 10:50:00', 130.00, 9, 10),
+  ('2025-04-10 11:05:00', 85.00, 10, 1);
+
+-- 10. DETALLE_VENTAS
+INSERT INTO DETALLE_VENTAS (cantidad, precio_unitario, subtotal, id_venta, id_producto) VALUES
+  (2, 10.00, 20.00, 1, 1),
+  (3, 10.00, 30.00, 1, 2),
+
+  (1, 25.50, 25.50, 2, 3),
+  (2, 25.00, 50.00, 2, 4),
+
+  (4, 20.00, 80.00, 3, 5),
+  (1, 20.00, 20.00, 3, 6),
+
+  (3, 15.00, 45.00, 4, 7),
+  (2, 52.50, 105.00, 4, 8),
+
+  (1, 80.00, 80.00, 5, 9),
+
+  (2, 47.50, 95.00, 6, 10),
+
+  (1, 60.75, 60.75, 7, 11),
+
+  (2, 55.00, 110.00, 8, 12),
+
+  (1, 65.00, 65.00, 9, 13),
+  (1, 65.00, 65.00, 9, 14),
+
+  (2, 42.50, 85.00, 10, 15);
+
 -- 11. METODO_PAGO
 INSERT INTO METODO_PAGO (nombre_metodo, descripcion) VALUES
   ('Efectivo', 'Pago en efectivo'),
@@ -88,3 +141,14 @@ INSERT INTO METODO_PAGO (nombre_metodo, descripcion) VALUES
   ('Transferencia Bancaria', 'Pago mediante transferencia bancaria'),
   ('Cheque', 'Pago con cheque'),
   ('Pago Móvil', 'Pago a través de aplicaciones móviles');
+  
+  -- 12. PAGOS
+INSERT INTO PAGOS (fecha_pago, monto, id_venta, id_metodo_pago) VALUES
+  ('2025-04-01 11:00:00', 50.00, 1, 1),
+  ('2025-04-02 12:00:00', 75.50, 2, 2),
+  ('2025-04-03 10:00:00', 100.00, 3, 3),
+  ('2025-04-04 15:00:00', 150.25, 4, 4),
+  ('2025-04-05 17:00:00', 80.00, 5, 5),
+  ('2025-04-06 13:00:00', 95.00, 6, 6),
+  ('2025-04-07 14:00:00', 60.75, 7, 1),
+  ('2025-04-08 16:00:00', 110.00, 8, 2);
