@@ -1,1 +1,15 @@
 @import url('./style-margin-adjuster.css');
+@import url('./style-nav-bar.css');
+@import url('./style-footer-bar.css?v=4');
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.main-content {
+    flex: 1;
+    padding: 100px 0 40px;
+}
