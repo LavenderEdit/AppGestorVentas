@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
-use Controllers\UsuarioController;
+use App\Controllers\AuthController;
 
-$usuariosController = new UsuarioController();
-$usuariosController->login();
+$authController = new AuthController();
+$authController->login();
 ?>
 
 <?php include __DIR__ . '/../template/header.php'; ?>
