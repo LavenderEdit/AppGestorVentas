@@ -1,0 +1,35 @@
+.navbar {
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.active-link {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-menu {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #2d2d2d;
+}
+
+.dropdown-item {
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
