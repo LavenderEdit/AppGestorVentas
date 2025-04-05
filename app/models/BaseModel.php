@@ -1,39 +1,44 @@
 <?php
-namespace models;
+namespace Models;
 
-abstract class BaseModel
+use PDO;
+use PDOException;
+class BaseModel
 {
-    protected int $id;
-    protected string $nombre;
-    protected ?string $descripcion = null;
+    protected $db;
 
-    public function getId(): int
+    public function __construct($pdo)
     {
-        return $this->id;
+        $this->db = $pdo;
     }
 
-    public function setId(int $id): void
+    public function ejecutarProcedimiento($sp_name, $params = [])
     {
-        $this->id = $id;
+        try {
+            $placeholders = implode(',', array_fill(0, count($params), '?'));
+            $sql = "CALL $sp_name($placeholders)";
+            $stmt = $this->db->prepare($sql);
+
+            foreach ($params as $key => $value) {
+                $stmt->bindValue($key + 1, $value);
+            }
+
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            return ['error' => $e->getMessage()];
+        }
     }
 
-    public function getNombre(): string
+    /**
+     * @param string $tipo
+     * @param array $params
+     * @return array
+     */
+    public function callProcedure($tipo, $params = [])
     {
-        return $this->nombre;
-    }
-
-    public function setNombre(string $nombre): void
-    {
-        $this->nombre = $nombre;
-    }
-
-    public function getDescripcion(): ?string
-    {
-        return $this->descripcion;
-    }
-
-    public function setDescripcion(?string $descripcion): void
-    {
-        $this->descripcion = $descripcion;
+        $className = strtolower((new \ReflectionClass($this))->getShortName());
+        $sp_name = "sp_" . $tipo . "_" . $className;
+        return $this->ejecutarProcedimiento($sp_name, $params);
     }
 }
