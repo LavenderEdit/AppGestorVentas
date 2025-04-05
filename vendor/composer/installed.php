@@ -3,7 +3,7 @@
         'name' => 'gestorventas/app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b50d5c7c17127345982d6679967e3fb7cd25d57a',
+        'reference' => '003c2ebc9a51bb3db457ed58a8f949b211bc7130',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'gestorventas/app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b50d5c7c17127345982d6679967e3fb7cd25d57a',
+            'reference' => '003c2ebc9a51bb3db457ed58a8f949b211bc7130',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

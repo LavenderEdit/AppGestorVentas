@@ -27,10 +27,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         array (
             'voku\\' => 5,
         ),
-        'V' => 
-        array (
-            'Views\\' => 6,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -45,10 +41,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
         ),
-        'R' => 
-        array (
-            'Routes\\' => 7,
-        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -62,7 +54,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         'M' => 
         array (
             'Monolog\\' => 8,
-            'Models\\' => 7,
         ),
         'I' => 
         array (
@@ -70,10 +61,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
-        ),
-        'H' => 
-        array (
-            'Helpers\\' => 8,
         ),
         'G' => 
         array (
@@ -89,11 +76,17 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         ),
         'C' => 
         array (
-            'Core\\' => 5,
-            'Controllers\\' => 12,
-            'Config\\' => 7,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
+        ),
+        'A' => 
+        array (
+            'App\\Routes\\' => 11,
+            'App\\Models\\' => 11,
+            'App\\Helpers\\' => 12,
+            'App\\Core\\' => 9,
+            'App\\Controllers\\' => 16,
+            'App\\Config\\' => 11,
         ),
     );
 
@@ -101,10 +94,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
-        ),
-        'Views\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/views',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -150,10 +139,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Routes\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/routes',
-        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -187,10 +172,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Models\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/models',
-        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/support',
@@ -208,10 +189,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
-        ),
-        'Helpers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/helpers',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -237,18 +214,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
-        'Core\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/core',
-        ),
-        'Controllers\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/controllers',
-        ),
-        'Config\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/config',
-        ),
         'Carbon\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
@@ -257,9 +222,36 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'App\\Routes\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/routes',
+        ),
+        'App\\Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
+        ),
+        'App\\Helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/helpers',
+        ),
+        'App\\Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/core',
+        ),
+        'App\\Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers',
+        ),
+        'App\\Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/config',
+        ),
     );
 
     public static $classMap = array (
+        'App\\Core\\App' => __DIR__ . '/../..' . '/app/core/App.php',
+        'App\\Core\\Controller' => __DIR__ . '/../..' . '/app/core/Controller.php',
+        'App\\Core\\Router' => __DIR__ . '/../..' . '/app/core/Router.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Carbon\\AbstractTranslator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/AbstractTranslator.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -345,9 +337,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         'Carbon\\TranslatorImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
         'Carbon\\TranslatorStrongTypeInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Controllers\\UsuarioController' => __DIR__ . '/../..' . '/app/controllers/UsuarioController.php',
-        'Core\\App' => __DIR__ . '/../..' . '/app/core/App.php',
-        'Core\\Controller' => __DIR__ . '/../..' . '/app/core/Controller.php',
         'Doctrine\\Inflector\\CachedWordInflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php',
         'Doctrine\\Inflector\\GenericLanguageInflectorFactory' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php',
         'Doctrine\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php',
@@ -906,19 +895,6 @@ class ComposerStaticInita1e3b2fa04e1142019c4a6493256258c
         'Illuminate\\Support\\ValidatedInput' => __DIR__ . '/..' . '/illuminate/support/ValidatedInput.php',
         'Illuminate\\Support\\ViewErrorBag' => __DIR__ . '/..' . '/illuminate/support/ViewErrorBag.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
-        'Models\\AvatarUsuario' => __DIR__ . '/../..' . '/app/models/AvatarUsuario.php',
-        'Models\\BaseModel' => __DIR__ . '/../..' . '/app/models/BaseModel.php',
-        'Models\\Categoria' => __DIR__ . '/../..' . '/app/models/Categoria.php',
-        'Models\\Clientes' => __DIR__ . '/../..' . '/app/models/Clientes.php',
-        'Models\\Detalle_Ventas' => __DIR__ . '/../..' . '/app/models/Detalle_Ventas.php',
-        'Models\\Metodo_Pago' => __DIR__ . '/../..' . '/app/models/Metodo_Pago.php',
-        'Models\\Pagos' => __DIR__ . '/../..' . '/app/models/Pagos.php',
-        'Models\\Productos' => __DIR__ . '/../..' . '/app/models/Productos.php',
-        'Models\\Proveedores' => __DIR__ . '/../..' . '/app/models/Proveedores.php',
-        'Models\\TipoCliente' => __DIR__ . '/../..' . '/app/models/TipoCliente.php',
-        'Models\\TipoUsuario' => __DIR__ . '/../..' . '/app/models/TipoUsuario.php',
-        'Models\\Usuarios' => __DIR__ . '/../..' . '/app/models/Usuarios.php',
-        'Models\\Ventas' => __DIR__ . '/../..' . '/app/models/Ventas.php',
         'Monolog\\Attribute\\AsMonologProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
