@@ -1,18 +1,23 @@
 <?php
-// Ejemplo muy básico de rutas
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+use App\Core\Router;
 
-switch ($uri) {
-    case '/':
-        require_once '../public/index.php';
-        break;
-    case '/login':
-        require_once '../app/controllers/UsuarioController.php';
-        $controller = new \Controllers\UsuarioController();
-        $controller->login();
-        break;
-    // Agrega más rutas según sea necesario
-    default:
-        echo "404 Not Found";
-        break;
-}
+$router = new Router();
+
+// Inicio
+$router->get('/', 'App\Controllers\HomeController@index');
+
+// Autenticación
+$router->get('/login', 'App\Controllers\AuthController@showLoginForm');
+$router->post('/login', 'App\Controllers\AuthController@login');
+$router->get('/logout', 'App\Controllers\AuthController@logout');
+
+// Dashboard
+$router->get('/dashboard', 'DashboardController@index');
+
+// Gestión de usuarios
+$router->get('/usuarios', 'App\Controllers\UsuarioController@index');
+$router->get('/usuarios/crear', 'App\Controllers\UsuarioController@create');
+$router->post('/usuarios', 'App\Controllers\UsuarioController@store');
+$router->get('/usuarios/{id}', 'App\Controllers\UsuarioController@show');
+
+$router->dispatch();
