@@ -1,4 +1,4 @@
-<footer class="bg-dark text-light py-3 mt-5 fixed-bottom">
+<footer class="text-light py-3 mt-5">
     <div class="container">
         <div class="row text-center text-md-start">
             <!-- Redes Sociales -->
