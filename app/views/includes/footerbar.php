@@ -1,45 +1,81 @@
-<footer class="bg-dark text-light py-3 mt-5 fixed-bottom">
-    <div class="container">
-        <div class="row text-center text-md-start">
+<footer class="custom-footer" id="contact">
+    <div class="container py-4">
+        <div class="row g-4">
             <!-- Redes Sociales -->
-            <div class="col-md-3 mb-3">
-                <h5 class="text-uppercase">Redes Sociales</h5>
-                <a href="#" class="text-light text-decoration-none d-block"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="#" class="text-light text-decoration-none d-block"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#" class="text-light text-decoration-none d-block"><i class="fab fa-instagram"></i>
-                    Instagram</a>
-                <a href="#" class="text-light text-decoration-none d-block"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-3">Conéctate</h5>
+                <div class="d-flex gap-3">
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fab fa-youtube fa-lg"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Contacto -->
-            <div class="col-md-3 mb-3">
-                <h5 class="text-uppercase">Contáctanos</h5>
-                <p class="mb-1"><i class="fas fa-envelope"></i> contacto@mpphp.com</p>
-                <p class="mb-1"><i class="fas fa-phone"></i> +51 987 654 321</p>
-                <p><i class="fas fa-map-marker-alt"></i> Lima, Perú</p>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-3">Contacto</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="mailto:contacto@mpphp.com" class="footer-link">
+                            <i class="fas fa-envelope me-2"></i>contacto@mpphp.com
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="tel:+51987654321" class="footer-link">
+                            <i class="fas fa-phone me-2"></i>+51 987 654 321
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Información -->
-            <div class="col-md-3 mb-3">
-                <h5 class="text-uppercase">Información</h5>
-                <a href="#" class="text-light text-decoration-none d-block">Sobre Nosotros</a>
-                <a href="#" class="text-light text-decoration-none d-block">Misión y Visión</a>
-                <a href="#" class="text-light text-decoration-none d-block">Términos y Condiciones</a>
+            <!-- Enlaces Rápidos -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-3">Empresa</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/about" class="footer-link">Sobre nosotros</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/team" class="footer-link">Nuestro equipo</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/blog" class="footer-link">Blog</a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Políticas de Privacidad -->
-            <div class="col-md-3 mb-3">
-                <h5 class="text-uppercase">Políticas</h5>
-                <a href="#" class="text-light text-decoration-none d-block">Privacidad</a>
-                <a href="#" class="text-light text-decoration-none d-block">Cookies</a>
-                <a href="#" class="text-light text-decoration-none d-block">Seguridad</a>
+            <!-- Legal -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-3">Legal</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="/privacy" class="footer-link">Política de privacidad</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/terms" class="footer-link">Términos de servicio</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="/cookies" class="footer-link">Política de cookies</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <hr class="bg-light">
-
-        <div class="text-center">
-            <p class="mb-0">&copy; 2024 Derechos Reservados al Grupo 3</p>
+        <!-- Derechos de autor -->
+        <div class="text-center mt-4 pt-3 border-top border-dark">
+            <p class="mb-0 small text-white fw-bold">
+                © 2024 MP-PHP. Todos los derechos reservados.
+                <span class="d-block d-md-inline mt-2 mt-md-0">Desarrollado por Grupo 3</span>
+            </p>
         </div>
     </div>
 </footer>
