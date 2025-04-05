@@ -1,7 +1,12 @@
-<?php include __DIR__ . '/../app/views/template/header.php'; ?>
-<?php include __DIR__ . '/../app/views/includes/navbar.php'; ?>
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
 
-<!-- Contenido principal aquí -->
+define('BASE_URL', '/GestorVentas/public');
+date_default_timezone_set('America/Lima');
 
-<?php include __DIR__ . '/../app/views/includes/footerbar.php'; ?>
-<?php include __DIR__ . '/../app/views/template/footer.php'; ?>
+$router = new App\Core\Router();
+
+require_once __DIR__ . '/../app/routes/web.php';
+
+$router->dispatch();
+?>
