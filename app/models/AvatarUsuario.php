@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class AvatarUsuario
+class AvatarUsuario extends BaseModel
 {
     private int $id_avatar_usuario;
     private string $avatar_usuario;
@@ -29,8 +29,23 @@ class AvatarUsuario
         $this->dimension_y_avatar = $dimension_y_avatar;
     }
 
-    // Getters y Setters
+    // Métodos para procedimientos de almacenamientos
+    public function crearAvatarUsuario($avatar_usuario, $nombre_avatar, $tipo_avatar, $peso_avatar, $dimension_x_avatar, $dimension_y_avatar)
+    {
+        return $this->callProcedure('crear', [$avatar_usuario, $nombre_avatar, $tipo_avatar, $peso_avatar, $dimension_x_avatar, $dimension_y_avatar]);
+    }
 
+    public function obtenerAvataresUsuario()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerAvatarUsuarioPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
+    }
+
+    // Getters y Setters
     public function getIdAvatarUsuario(): int
     {
         return $this->id_avatar_usuario;

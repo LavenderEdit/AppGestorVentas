@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class Ventas
+class Ventas extends BaseModel
 {
     private int $id_venta;
     private \DateTime $fecha;
@@ -21,6 +21,22 @@ class Ventas
         $this->total = $total;
         $this->id_cliente = $id_cliente;
         $this->id_usuario = $id_usuario;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearVentas($fecha, $total, $id_cliente, $id_usuario)
+    {
+        return $this->callProcedure('crear', [$fecha, $total, $id_cliente, $id_usuario]);
+    }
+
+    public function obtenerVentas()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerVentaPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters

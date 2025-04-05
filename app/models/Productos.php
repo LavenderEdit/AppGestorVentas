@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class Productos
+class Productos extends BaseModel
 {
     private int $id_producto;
     private string $nombre;
@@ -27,6 +27,22 @@ class Productos
         $this->stock = $stock;
         $this->id_categoria = $id_categoria;
         $this->id_proveedor = $id_proveedor;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearProducto($nombre, $descripcion, $precio, $stock, $id_categoria, $id_proveedor)
+    {
+        return $this->callProcedure('crear', [$nombre, $descripcion, $precio, $stock, $id_categoria, $id_proveedor]);
+    }
+
+    public function obtenerPagos()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerPagoPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters

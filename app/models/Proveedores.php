@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class Proveedores
+class Proveedores extends BaseModel
 {
     private int $id_proveedor;
     private string $nombre;
@@ -21,6 +21,22 @@ class Proveedores
         $this->email = $email;
         $this->telefono = $telefono;
         $this->direccion = $direccion;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearProveedor($nombre, $email, $telefono, $direccion)
+    {
+        return $this->callProcedure('crear', [$nombre, $email, $telefono, $direccion]);
+    }
+
+    public function obtenerProveedores()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerProveedorPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters

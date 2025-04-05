@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 
-class Pagos
+class Pagos extends BaseModel
 {
     private int $id_pago;
     private \DateTime $fecha_pago;
@@ -21,6 +21,22 @@ class Pagos
         $this->monto = $monto;
         $this->id_venta = $id_venta;
         $this->id_metodo_pago = $id_metodo_pago;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearPago($fecha_pago, $monto, $id_venta, $id_metodo_pago)
+    {
+        return $this->callProcedure('crear', [$fecha_pago, $monto, $id_venta, $id_metodo_pago]);
+    }
+
+    public function obtenerPagos()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerPagoPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters

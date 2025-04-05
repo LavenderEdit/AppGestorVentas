@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class Clientes
+class Clientes extends BaseModel
 {
     private int $id_cliente;
     private string $num_identificacion;
@@ -27,6 +27,22 @@ class Clientes
         $this->telefono = $telefono;
         $this->email = $email;
         $this->id_tipo_cliente = $id_tipo_cliente;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearCliente($num_identificacion, $nombre, $direccion, $telefono, $email, $id_tipo_cliente)
+    {
+        return $this->callProcedure('crear', [$num_identificacion, $nombre, $direccion, $telefono, $email, $id_tipo_cliente]);
+    }
+
+    public function obtenerClientes()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerClientePorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters

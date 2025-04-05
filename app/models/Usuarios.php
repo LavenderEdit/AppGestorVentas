@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace Models;
 
-class Usuarios
+class Usuarios extends BaseModel
 {
     private int $id_usuario;
     private string $nombre;
@@ -35,6 +35,34 @@ class Usuarios
     public static function verifyPassword(string $password, string $hashedPassword): bool
     {
         return password_verify($password, $hashedPassword);
+    }
+
+    // Método para autenticar usuario
+    public function autenticarUsuario(string $correo, string $password)
+    {
+        $usuario = $this->callProcedure('autenticar', [$correo]);
+
+        if ($usuario && self::verifyPassword($password, $usuario['contrasenia'])) {
+            unset($usuario['contrasenia']);
+            return $usuario;
+        }
+        return false;
+    }
+
+    // Métodos para procedimientos de almacenamientos
+    public function crearUsuario($nombre, $correo, $contrasenia, $tipoUsuario)
+    {
+        return $this->callProcedure('crear', [$nombre, $correo, $contrasenia, $tipoUsuario]);
+    }
+
+    public function obtenerUsuarios()
+    {
+        return $this->callProcedure('visualizar', []);
+    }
+
+    public function obtenerUsuarioPorId($id)
+    {
+        return $this->callProcedure('visualizar_por_id', [$id]);
     }
 
     // Getters y Setters
