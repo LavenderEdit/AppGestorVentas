@@ -1,25 +1,25 @@
 <?php
-namespace Controllers;
+namespace App\Controllers;
 
-use Models\Usuarios;
-use Core\Controller;
+use App\Models\Usuarios;
+use App\Core\Controller;
 
 class UsuarioController extends Controller
 {
+    //Métodos para el crud API - REST
     public function index()
     {
         $usuarioModel = new Usuarios();
         $usuarios = $usuarioModel->obtenerUsuarios();
-
         $this->loadView("usuarios/index", ["usuarios" => $usuarios]);
     }
 
-    public function crear()
+    public function create()
     {
         $this->loadView("usuarios/crear");
     }
 
-    public function guardar()
+    public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nombre = $_POST['nombre'] ?? '';
@@ -30,72 +30,21 @@ class UsuarioController extends Controller
             $usuarioModel = new Usuarios();
             $resultado = $usuarioModel->crearUsuario($nombre, $correo, $contrasenia, $tipoUsuario);
 
-            header("Location: /dashboard.php?page=usuarios&action=index");
+            header("Location: /usuarios");
             exit;
         }
     }
 
-    public function buscar()
+    public function show($id)
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $usuarioModel = new Usuarios();
-            $usuario = $usuarioModel->obtenerUsuarioPorId($id);
+        $usuarioModel = new Usuarios();
+        $usuario = $usuarioModel->obtenerUsuarioPorId($id);
 
-            if ($usuario) {
-                $this->loadView("usuarios/view", ["usuario" => $usuario]);
-            } else {
-                header("Location: /dashboard.php?page=usuarios&action=index&error=Usuario no encontrado");
-                exit;
-            }
+        if ($usuario) {
+            $this->loadView("usuarios/ver", ["usuario" => $usuario]);
         } else {
-            $this->loadView("usuarios/buscar");
+            header("Location: /usuarios?error=Usuario no encontrado");
+            exit;
         }
-    }
-
-    public function login()
-    {
-        session_start();
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $correo = $_POST['correo'] ?? '';
-            $contrasenia = $_POST['contrasenia'] ?? '';
-
-            if (empty($correo) || empty($contrasenia)) {
-                $_SESSION['error'] = "Correo y contraseña son obligatorios.";
-                header("Location: /../auth/login.php");
-                exit;
-            }
-
-            $usuarioModel = new Usuarios();
-            $usuario = $usuarioModel->autenticarUsuario($correo, $contrasenia);
-
-            if ($usuario) {
-                $_SESSION['usuario'] = [
-                    'id' => $usuario['id_usuario'],
-                    'nombre' => $usuario['nombre'],
-                    'correo' => $usuario['correo'],
-                    'tipo' => $usuario['tipo_id_usuario'],
-                    'avatar' => $usuario['avatar_id_usuario']
-                ];
-                header("Location: /dashboard.php");
-                exit;
-            } else {
-                $_SESSION['error'] = "Credenciales incorrectas.";
-                header("Location: /login.php");
-                exit;
-            }
-        } else {
-            $this->loadView("auth/login");
-        }
-    }
-
-
-    public function logout()
-    {
-        session_start();
-        session_destroy();
-        header("Location: /login.php");
-        exit;
     }
 }
